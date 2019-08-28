@@ -89,7 +89,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    case "%m" in
+    case ( `hostname` ) in
         *live*)      prompt_segment red default "%(!.%{%F{yellow}%}.)%n@%m";;
         *)           prompt_segment blue default "%(!.%{%F{yellow}%}.)%n@%m";;
     esac
