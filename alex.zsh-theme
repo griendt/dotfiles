@@ -89,7 +89,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    case "%m" in
+    case (`hostname`) in
         *live*)      prompt_segment red black "%(!.%{%F{yellow}%}.)%n@%m";;
         *)           prompt_segment blue black "%(!.%{%F{yellow}%}.)%n@%m";;
     esac
@@ -210,7 +210,10 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment cyan $CURRENT_FG '%~'
+  case (`hostname`) in
+      *live*) prompt_segment magenta $CURRENT_FG '%~';;
+      *)      prompt_segment cyan $CURRENT_FG '%~';;
+  esac
 }
 
 # Virtualenv: current working virtualenv
