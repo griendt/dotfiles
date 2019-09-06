@@ -292,3 +292,7 @@ bind - split-window -v
 
 # move status line to top
 #set -g status-position top
+
+# override the confirmation prompt for killing panes and windows
+bind & kill-window
+bind x kill-pane
