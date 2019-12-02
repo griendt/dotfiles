@@ -211,7 +211,7 @@ prompt_hg() {
 # Dir: current working directory
 prompt_dir() {
   case (`hostname`) in
-      *live*) prompt_segment magenta $CURRENT_FG '%~';;
+      *live*) prompt_segment white $CURRENT_FG '%~';;
       *)      prompt_segment cyan $CURRENT_FG '%~';;
   esac
 }
