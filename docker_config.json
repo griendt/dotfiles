@@ -1,0 +1,6 @@
+{
+	"HttpHeaders": {
+		"User-Agent": "Docker-Client/19.03.1 (linux)"
+	},
+	"psFormat": "table {{.Image}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"
+}
